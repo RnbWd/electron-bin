@@ -14,6 +14,7 @@
     "url": "https://github.com/RnbWd/electron-bin/issues"
   },
   "dependencies": {
+    "electron-rebuild": "^0.1.4",
     "extract-zip": "^1.0.3",
     "home-path": "^0.1.1",
     "nugget": "^1.2.0"
@@ -21,6 +22,7 @@
   "devDependencies": {
     "tape": "^3.0.1"
   },
+  "electronVersion": "0.25.2",
   "homepage": "https://github.com/RnbWd/electron-bin",
   "keywords": [
     "RnbWd",

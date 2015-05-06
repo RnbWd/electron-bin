@@ -1,6 +1,6 @@
-.DS_Store
 node_modules
 npm-debug.log
-*.zip
 dist
+path.txt
+*.zip
 .DS_Store

@@ -5,10 +5,11 @@ var path = require('path')
 var nugget = require('nugget')
 var extract = require('extract-zip')
 var fs = require('fs')
+var pkg = require('./package.json');
 
 var platform = os.platform()
 var arch = os.arch()
-var version = '0.25.2'
+var version = pkg.electronVersion || '0.25.2'
 var filename = 'electron-v' + version + '-' + platform + '-' + arch + '.zip'
 var url = 'https://github.com/atom/electron/releases/download/v' + version + '/electron-v' + version + '-' + platform + '-' + arch + '.zip'
 
