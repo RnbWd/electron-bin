@@ -6,7 +6,7 @@ var nugget = require('nugget')
 var extract = require('extract-zip')
 var fs = require('fs')
 var pkg = require('./package.json');
-
+var getHomePath = require("home-path");
 var platform = os.platform()
 var arch = os.arch()
 var version = pkg.electronVersion || '0.25.2'
@@ -18,9 +18,9 @@ function onerror (err) {
 }
 
 var paths = {
-  darwin: path.join(__dirname, './dist/Electron.app/Contents/MacOS/Electron'),
-  linux: path.join(__dirname, './dist/electron'),
-  win32: path.join(__dirname, './dist/electron.exe')
+  darwin: path.join(getHomePath, './.electron/Electron.app/Contents/MacOS/Electron'),
+  linux: path.join(getHomePath, './.electron/electron'),
+  win32: path.join(getHomePath, './.electron/electron.exe')
 }
 
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
