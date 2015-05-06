@@ -7,17 +7,24 @@
     "email": "dwisner6@gmail.com",
     "url": "http://RnbWd.com"
   },
+  "bin": {
+    "electron": "cli.js"
+  },
   "bugs": {
     "url": "https://github.com/RnbWd/electron-bin/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "extract-zip": "^1.0.3",
+    "home-path": "^0.1.1",
+    "nugget": "^1.2.0"
+  },
   "devDependencies": {
-    "mocha": "*"
+    "tape": "^3.0.1"
   },
   "homepage": "https://github.com/RnbWd/electron-bin",
   "keywords": [
-    "electron-bin",
-    "RnbWd"
+    "RnbWd",
+    "electron-bin"
   ],
   "license": "MIT",
   "main": "index.js",
@@ -29,6 +36,7 @@
     "url": "http://github.com/RnbWd/electron-bin.git"
   },
   "scripts": {
-    "test": "mocha"
+    "install": "node install.js",
+    "test": "tape test/*.js"
   }
 }
