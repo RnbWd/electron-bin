@@ -27,8 +27,10 @@ var paths = {
 }
 
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
-console.log(pathExists.sync(paths[platform]));
-nugget(url, {target: zipname, dir: __dirname, resume: true, verbose: true}, function (err) {
+if (pathExists.sync(paths[platform])) {
+  console.log('This version of electron  already exists: \n'+paths[platform])
+} else {
+  nugget(url, {target: zipname, dir: __dirname, resume: true, verbose: true}, function (err) {
   if (err) return onerror(err)
   fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
   extract(path.join(__dirname, zipname), {dir: path.join(getHomePath, './.electron/'+filename)}, function (err) {
@@ -38,3 +40,5 @@ nugget(url, {target: zipname, dir: __dirname, resume: true, verbose: true}, func
     })
   })
 })
+}
+
