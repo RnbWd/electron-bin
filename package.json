@@ -1,0 +1,34 @@
+{
+  "name": "electron-bin",
+  "description": "electron-bin",
+  "version": "0.0.1",
+  "author": {
+    "name": "David Wisner",
+    "email": "dwisner6@gmail.com",
+    "url": "http://RnbWd.com"
+  },
+  "bugs": {
+    "url": "https://github.com/RnbWd/electron-bin/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "homepage": "https://github.com/RnbWd/electron-bin",
+  "keywords": [
+    "electron-bin",
+    "RnbWd"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/RnbWd/electron-bin.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
