@@ -29,6 +29,7 @@ var paths = {
 
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
 if (pathExists.sync(paths[platform])) {
+  fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
   console.log('This version of electron  already exists: \n'+paths[platform])
 } else {
   nugget(url, {target: zipname, dir: __dirname, resume: true, verbose: true}, function (err) {
