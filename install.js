@@ -5,13 +5,13 @@ var path = require('path')
 var pathExists = require('path-exists');
 var nugget = require('nugget')
 var extract = require('extract-zip')
+var rimraf = require('rimraf');
 var fs = require('fs')
-var pkg = require('./package.json')
 var getHomePath = require('home-path')()
 var platform = os.platform()
 var arch = os.arch()
 
-var version = pkg.electronVersion || '0.25.2'
+var version = '0.25.2'
 var filename = 'electron-v' + version + '-' + platform + '-' + arch;
 var zipname = filename + '.zip'
 var url = 'https://github.com/atom/electron/releases/download/v' + version + '/electron-v' + version + '-' + platform + '-' + arch + '.zip'
@@ -33,5 +33,8 @@ nugget(url, {target: zipname, dir: __dirname, resume: true, verbose: true}, func
   fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
   extract(path.join(__dirname, zipname), {dir: path.join(getHomePath, './.electron/'+filename)}, function (err) {
     if (err) return onerror(err)
+    rimraf(path.join(__dirname, zipname), function(err) {
+      if (err) return onerror(err)
+    })
   })
 })
