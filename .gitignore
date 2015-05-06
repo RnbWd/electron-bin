@@ -1,6 +1,5 @@
 node_modules
 npm-debug.log
-dist
 path.txt
 *.zip
 .DS_Store
