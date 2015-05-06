@@ -16,7 +16,8 @@
   "dependencies": {
     "extract-zip": "^1.0.3",
     "home-path": "^0.1.1",
-    "nugget": "^1.2.0"
+    "nugget": "^1.2.0",
+    "rimraf": "^2.3.3"
   },
   "devDependencies": {
     "tape": "^3.0.1"
