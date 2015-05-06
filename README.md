@@ -14,11 +14,9 @@ Electron is a javascript runtime that bundles Node.js and Chromium. You use it s
 
 ## Installation
 
-Download and install the latest build of electron for your OS
+Download and install the latest build of electron for your OS ~~and add it to your projects `package.json` as a `devDependency`~~
 
-~~and add it to your projects `package.json` as a `devDependency`~~
-
-Add it to your **HOME DIRECTORY** - eg: `~/.electron/`, so that you don't have 1000000000 copies of electron downloaded while you're trying to test / use many apps at the same time.
+Add it to your **HOME DIRECTORY** - eg: `~/.electron/`, so that you don't have 1000000000 copies of electron on your machine while you experimenting with black magic.
 
 ```
 npm install electron-bin --save-dev
