@@ -2,10 +2,9 @@
 
 var os = require('os')
 var path = require('path')
-// var nugget = require('nugget')
-// var extract = require('extract-zip')
-// var fs = require('fs')
-var Download = require('download')
+var nugget = require('nugget')
+var extract = require('extract-zip')
+var fs = require('fs')
 var pkg = require('./package.json')
 var getHomePath = require('home-path')()
 var platform = os.platform()
@@ -27,17 +26,10 @@ var paths = {
 
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
 
-new Download({mode: '755', extract: true})
-  .get(url)
-  .dest(paths[platform])
-  .run(function(files) {
-    console.log(files);
+nugget(url, {target: filename, dir: __dirname, resume: true, verbose: true}, function (err) {
+  if (err) return onerror(err)
+  fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
+  extract(path.join(__dirname, filename), {dir: path.join(__dirname, 'dist')}, function (err) {
+    if (err) return onerror(err)
   })
-
-// nugget(url, {target: filename, dir: __dirname, resume: true, verbose: true}, function (err) {
-//   if (err) return onerror(err)
-//   fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
-//   extract(path.join(__dirname, filename), {dir: path.join(__dirname, 'dist')}, function (err) {
-//     if (err) return onerror(err)
-//   })
-// })
+})
