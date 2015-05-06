@@ -4,7 +4,7 @@ electron-bin
 [![Build Status](https://img.shields.io/travis/RnbWd/electron-bin.svg?style=flat-square)](https://travis-ci.org/RnbWd/electron-bin)
 [![Dependency Status](https://img.shields.io/david/RnbWd/electron-bin.svg?style=flat-square)](https://david-dm.org/RnbWd/electron-bin)
 
-Fork of [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) that just installs 1 copy of electron in your home directory.
+Fork of [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) that just installs 1 copy of electron in your **home directory**.
 
 Install [electron](https://github.com/atom/electron) (formerly called **atom-shell**) prebuilt binaries for command-line use using npm.
 
