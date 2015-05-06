@@ -29,7 +29,7 @@ if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
 nugget(url, {target: filename, dir: __dirname, resume: true, verbose: true}, function (err) {
   if (err) return onerror(err)
   fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
-  extract(path.join(__dirname, filename), {dir: path.join(__dirname, 'dist')}, function (err) {
+  extract(path.join(__dirname, filename), {dir: path.join(getHomePath, './.electron')}, function (err) {
     if (err) return onerror(err)
   })
 })
