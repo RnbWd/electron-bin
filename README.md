@@ -14,10 +14,10 @@ Electron is a javascript runtime that bundles Node.js and Chromium. You use it s
 
 ## Installation
 
-Download and install the latest build of electron for your OS and add it to your projects `package.json` as a `devDependency`:
+Download and install the latest build of electron for your OS and add it to your ~~projects `package.json` as a `devDependency`~~ **HOME DIRECTORY** - `~/.electron/:
 
 ```
-npm install electron-prebuilt --save-dev
+npm install electron-bin --save-dev
 ```
 
 This is the preferred way to use electron, as it doesn't require users to install electron globally.
@@ -25,13 +25,13 @@ This is the preferred way to use electron, as it doesn't require users to instal
 You can also use the `-g` flag (global) to symlink it into your PATH:
 
 ```
-npm install -g electron-prebuilt
+npm install -g electron-bin
 ```
 
 If that command fails with an `EACCESS` error you may have to run it again with `sudo`:
 
 ```
-sudo npm install -g electron-prebuilt
+sudo npm install -g electron-bin
 ```
 
 Now you can just run `electron` to run electron:
@@ -52,14 +52,14 @@ electron your-app/
 
 ## Programmatic usage
 
-If you require `electron-prebuilt` inside your node app it will return the file path to the binary.
+If you require `electron-bin` inside your node app it will return the file path to the binary.
 Use this to spawn electron
 
 ``` js
-var electron = require('electron-prebuilt')
+var electron = require('electron-bin')
 var proc = require('child_process')
 
-// will something similar to print /Users/maf/.../Electron
+// will something similar to print /Users/rnb/.electron/.../Electron
 console.log(electron)
 
 // spawn electron
