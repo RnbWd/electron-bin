@@ -4,7 +4,7 @@ electron-bin
 [![Build Status](https://img.shields.io/travis/RnbWd/electron-bin.svg?style=flat-square)](https://travis-ci.org/RnbWd/electron-bin)
 [![Dependency Status](https://img.shields.io/david/RnbWd/electron-bin.svg?style=flat-square)](https://david-dm.org/RnbWd/electron-bin)
 
-Similar to [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) - but singular and global
+Similar to [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) - but singular and global (also a replica of this [pull-request](https://github.com/mafintosh/electron-prebuilt/pull/23) and technically has identical api of  `prebuilt` - could be considered a fork, but my intention is to focus on global cmd, moreso than as a dependency within a lib.
 
 Install [electron](https://github.com/atom/electron) (formerly called **atom-shell**) prebuilt binaries for command-line use using npm.
 
