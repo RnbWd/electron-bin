@@ -40,7 +40,6 @@ Then you can run your app using:
 
 ```
 electron your-app/
-
 ```
 MIT
 
