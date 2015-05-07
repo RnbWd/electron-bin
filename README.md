@@ -6,12 +6,6 @@ electron-bin
 
 Similar to [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) - (it's actually a fork and identical to this [pull-request](https://github.com/mafintosh/electron-prebuilt/pull/23)) but my intention is to focus on global cmd over local dependencies. I can't guarantee the same behavior as `electron-prebuilt` indefinitely.
 
-Install [electron](https://github.com/atom/electron) (formerly called **atom-shell**) prebuilt binaries for command-line use using npm.
-
-Works on Mac, Windows and Linux OSes that Electron supports (e.g. Electron [does not support Windows XP](https://github.com/atom/electron/issues/691)).
-
-Electron is a javascript runtime that bundles Node.js and Chromium. You use it similar to the `node` command on the command line for executing javascript programs. This module helps you easily install the `electron` command for use on the command line without having to compile anything.
-
 ## Installation
 
 Download and install the latest build of electron for your OS
