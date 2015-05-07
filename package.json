@@ -26,8 +26,9 @@
   "electronVersion": "0.25.2",
   "homepage": "https://github.com/RnbWd/electron-bin",
   "keywords": [
-    "RnbWd",
-    "electron-bin"
+    "electron",
+    "electron-bin",
+    "electron-prebuilt"
   ],
   "license": "MIT",
   "main": "index.js",
@@ -40,6 +41,7 @@
   },
   "scripts": {
     "install": "node install.js",
-    "test": "tape test/*.js"
+    "test": "tape test/*.js",
+    "cache-clean": "rimraf ~/.electron"
   }
 }
