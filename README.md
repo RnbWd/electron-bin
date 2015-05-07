@@ -22,7 +22,7 @@ Add it to your **HOME DIRECTORY** - eg: `~/.electron/`, so that you don't have 1
 npm install electron-bin --save-dev
 ```
 
-This is the preferred way to use electron, as it doesn't require users to install electron globally.
+This is the ~~preferred~~ :pouting_cat: **UNPREFERRED**  way to use electron, as it ~~doesn't~~ :hear_no_evil: **DOES** require users to install electron globally.
 
 You can also use the `-g` flag (global) to symlink it into your PATH:
 
