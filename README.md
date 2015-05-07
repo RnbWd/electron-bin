@@ -4,7 +4,7 @@ electron-bin
 [![Build Status](https://img.shields.io/travis/RnbWd/electron-bin.svg?style=flat-square)](https://travis-ci.org/RnbWd/electron-bin)
 [![Dependency Status](https://img.shields.io/david/RnbWd/electron-bin.svg?style=flat-square)](https://david-dm.org/RnbWd/electron-bin)
 
-Fork of [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) that just installs 1 copy of electron in your **home directory**.
+Similar to [electron-prebuilt](https://github.com/mafintosh/electron-prebuilt) - but singular and global
 
 Install [electron](https://github.com/atom/electron) (formerly called **atom-shell**) prebuilt binaries for command-line use using npm.
 
@@ -14,17 +14,7 @@ Electron is a javascript runtime that bundles Node.js and Chromium. You use it s
 
 ## Installation
 
-Download and install the latest build of electron for your OS ~~and add it to your projects `package.json` as a `devDependency`~~
-
-Add it to your **HOME DIRECTORY** - eg: `~/.electron/`, so that you don't have 1000000000 copies of electron on your machine while you experimenting with black magic.
-
-```
-npm install electron-bin --save-dev
-```
-
-This is the ~~preferred~~ :pouting_cat: **UNPREFERRED**  way to use electron, as it ~~doesn't~~ :hear_no_evil: **DOES** require users to install electron globally.
-
-You can also use the `-g` flag (global) to symlink it into your PATH:
+Download and install the latest build of electron for your OS
 
 ```
 npm install -g electron-bin
@@ -50,22 +40,6 @@ Then you can run your app using:
 
 ```
 electron your-app/
-```
-
-## Programmatic usage
-
-If you require `electron-bin` inside your node app it will return the file path to the binary.
-Use this to spawn electron:
-
-``` js
-var electron = require('electron-bin')
-var proc = require('child_process')
-
-// will something similar to print /Users/rnb/.electron/.../Electron
-console.log(electron)
-
-// spawn electron
-var child = proc.spawn(electron)
 ```
 
 MIT
