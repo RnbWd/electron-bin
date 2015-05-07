@@ -1,0 +1,6 @@
+node_modules
+npm-debug.log
+path.txt
+*.zip
+.DS_Store
+dist/
