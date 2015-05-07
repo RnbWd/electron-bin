@@ -3,4 +3,7 @@ npm-debug.log
 path.txt
 *.zip
 .DS_Store
+<<<<<<< HEAD
 dist/
+=======
+>>>>>>> origin/master
