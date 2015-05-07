@@ -40,7 +40,9 @@ Then you can run your app using:
 
 ```
 electron your-app/
+
 ```
+MIT
 
 ## Credits
 
@@ -49,9 +51,3 @@ electron your-app/
 [mafintosh/electron-prebuilt](https://github.com/mafintosh/electron-prebuilt)
 
 And everyone who contributed to those libraries
-
-
-
-MIT
-
-
