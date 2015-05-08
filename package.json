@@ -24,7 +24,7 @@
     "rimraf": "^2.3.3",
     "tape": "^3.0.1"
   },
-  "electronVersion": "0.25.2",
+  "electronVersion": "0.25.3",
   "homepage": "https://github.com/RnbWd/electron-bin",
   "keywords": [
     "electron",

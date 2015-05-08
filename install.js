@@ -11,7 +11,7 @@ var pkg = require('./package.json')
 var getHomePath = require('home-path')()
 var platform = os.platform()
 var arch = os.arch()
-var version = '0.25.2' || pkg.electronVersion
+var version = '0.25.3' || pkg.electronVersion
 var filename = 'electron-v' + version + '-' + platform + '-' + arch + '.zip'
 
 var url = 'https://github.com/atom/electron/releases/download/v' + version + '/electron-v' + version + '-' + platform + '-' + arch + '.zip'
