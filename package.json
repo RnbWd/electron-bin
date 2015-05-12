@@ -39,8 +39,9 @@
   },
   "scripts": {
     "cache-clean": "rm -rf ~/.electron && rm -rf dist",
-    "install": "node install.js",
-    "test": "tape test/*.js",
-    "prepublish": "npm run cache-clean && npm install && npm test"
+    "preinstall": "node install.js",
+    "prepublish": "npm prune && npm test",
+    "pretest": "npm run cache-clean && node install.js",
+    "test": "tape test/*.js"
   }
 }
