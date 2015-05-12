@@ -1,20 +1,14 @@
 #!/usr/bin/env node
 
+var pkg = require('./package.json');
+var fs = require('fs')
 var os = require('os')
 var path = require('path')
-var pathExists = require('path-exists')
-var mkdir = require('mkdirp')
-var nugget = require('nugget')
 var extract = require('extract-zip')
-var fs = require('fs')
-var pkg = require('./package.json')
-var getHomePath = require('home-path')()
-var platform = os.platform()
-var arch = os.arch()
-var version = '0.25.3' || pkg.electronVersion
-var filename = 'electron-v' + version + '-' + platform + '-' + arch + '.zip'
+var download = require('electron-download')
 
-var url = 'https://github.com/atom/electron/releases/download/v' + version + '/electron-v' + version + '-' + platform + '-' + arch + '.zip'
+var version = pkg.version || '0.26.0'
+var platform = os.platform()
 
 function onerror (err) {
   throw err
@@ -26,24 +20,18 @@ var paths = {
   win32: path.join(__dirname, './dist/electron.exe')
 }
 
-var cache = path.join(getHomePath, './.electron')
-
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
 
-// use cache if possible
-if (pathExists.sync(path.join(cache, filename))) {
-  extractFile()
-} else {
-  mkdir(cache, function(err) {
-    if (err) return onerror(err)
-    nugget(url, {target: filename, dir: cache, resume: true, verbose: true}, extractFile)
-  })
-}
+// downloads if not cached
+download({version: version}, extractFile)
 
-function extractFile (err) {
+// unzips and makes path.txt point at the correct executable
+function extractFile (err, zipPath) {
   if (err) return onerror(err)
-  fs.writeFileSync(path.join(__dirname, 'path.txt'), paths[platform])
-  extract(path.join(cache, filename), {dir: path.join(__dirname, 'dist')}, function (err) {
+  fs.writeFile(path.join(__dirname, 'path.txt'), paths[platform], function (err) {
     if (err) return onerror(err)
+    extract(zipPath, {dir: path.join(__dirname, 'dist')}, function (err) {
+      if (err) return onerror(err)
+    })
   })
 }
