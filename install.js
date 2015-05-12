@@ -7,9 +7,7 @@ var path = require('path')
 var extract = require('extract-zip')
 var download = require('electron-download')
 
-// temporary
-// var version = pkg.version || '0.26.0'
-var version = '0.26.0'
+var version = pkg.version || '0.26.0'
 var platform = os.platform()
 
 function onerror (err) {
