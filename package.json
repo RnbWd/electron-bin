@@ -1,6 +1,6 @@
 {
   "name": "electron-bin",
-  "version": "0.37.2",
+  "version": "0.37.1",
   "description": "Install electron prebuilt binaries for the command-line use using npm",
   "author": {
     "name": "David Wisner",
@@ -39,8 +39,5 @@
     "electron bin",
     "electron-bin"
   ],
-  "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  }
+  "license": "MIT"
 }
