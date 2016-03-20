@@ -1,13 +1,21 @@
 #!/usr/bin/env node
 
-var pkg = require('./package.json');
+// maintainer note - x.y.z-ab version in package.json -> x.y.z
+var version = require('./package').version.replace(/-.*/, '')
+
 var fs = require('fs')
 var os = require('os')
 var path = require('path')
 var extract = require('extract-zip')
 var download = require('electron-download')
 
-var version = pkg.version || '0.26.0'
+var installedVersion = null
+try {
+  installedVersion = fs.readFileSync(path.join(__dirname, 'dist', 'version'), 'utf-8').replace(/^v/, '')
+} catch (err) {
+  // do nothing
+}
+
 var platform = os.platform()
 
 function onerror (err) {
@@ -15,15 +23,20 @@ function onerror (err) {
 }
 
 var paths = {
-  darwin: path.join(__dirname, './dist/Electron.app/Contents/MacOS/Electron'),
-  linux: path.join(__dirname, './dist/electron'),
-  win32: path.join(__dirname, './dist/electron.exe')
+  darwin: 'dist/Electron.app/Contents/MacOS/Electron',
+  freebsd: 'dist/electron',
+  linux: 'dist/electron',
+  win32: 'dist/electron.exe'
 }
 
 if (!paths[platform]) throw new Error('Unknown platform: ' + platform)
 
+if (installedVersion === version && fs.existsSync(path.join(__dirname, paths[platform]))) {
+  process.exit(0)
+}
+
 // downloads if not cached
-download({version: version}, extractFile)
+download({version: version, platform: process.env.npm_config_platform, arch: process.env.npm_config_arch, strictSSL: process.env.npm_config_strict_ssl === 'true'}, extractFile)
 
 // unzips and makes path.txt point at the correct executable
 function extractFile (err, zipPath) {
