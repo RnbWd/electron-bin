@@ -2,7 +2,7 @@
 
 [![build status](http://img.shields.io/travis/RnbWd/electron-bin.svg?style=flat)](http://travis-ci.org/RnbWd/electron-bin)
 
-![badge](https://nodei.co/npm/electron-bin.png?downloads=true)
+[![badge](https://nodei.co/npm/electron-bin.png?downloads=true)](https://www.npmjs.com/package/electron-bin)
 
 ** just a clone of electron-prebuilt **
 
