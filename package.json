@@ -1,6 +1,6 @@
 {
   "name": "electron-bin",
-   "version": "0.37.1",
+  "version": "0.37.2",
   "description": "Install electron prebuilt binaries for the command-line use using npm",
   "author": {
     "name": "David Wisner",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "http://github.com/RnbWd/electron-bin.git"
   },
- "scripts": {
+  "scripts": {
     "cache-clean": "rm -rf ~/.electron && rm -rf dist",
     "postinstall": "node install.js",
     "pretest": "npm run cache-clean && node install.js",
