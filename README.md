@@ -1,6 +1,6 @@
 # electron-bin
 
-[![build status](http://img.shields.io/travis/electron-userland/electron-bin.svg?style=flat)](http://travis-ci.org/electron-userland/electron-bin)
+[![build status](http://img.shields.io/travis/RnbWd/electron-bin.svg?style=flat)](http://travis-ci.org/RnbWd/electron-bin)
 
 ![badge](https://nodei.co/npm/electron-bin.png?downloads=true)
 
@@ -65,7 +65,7 @@ electron your-app/
 
 ## Related modules
 
-- [electron-packager](https://github.com/electron-userland/electron-packager) - package and distribute your electron app in OS executables (.app, .exe etc)
+- [electron-packager](https://github.com/RnbWd/electron-packager) - package and distribute your electron app in OS executables (.app, .exe etc)
 - [electron-builder](https://github.com/loopline-systems/electron-builder) - create installers for Windows and OS X. It's built to work together with electron-packager
 - [menubar](https://github.com/maxogden/menubar) - high level way to create menubar desktop applications with electron
 
