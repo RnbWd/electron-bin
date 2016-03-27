@@ -4,7 +4,7 @@
 
 [![badge](https://nodei.co/npm/electron-bin.png?downloads=true)](https://www.npmjs.com/package/electron-bin)
 
-** just a clone of electron-prebuilt **
+** just a clone of [electron-prebuilt](https://github.com/electron-userland/electron-prebuilt) **
 
 Install [electron](https://github.com/atom/electron) bin binaries for command-line use using npm. This module helps you easily install the `electron` command for use on the command line without having to compile anything.
 
@@ -51,7 +51,8 @@ Works on Mac, Windows and Linux OSes that Electron supports (e.g. Electron [does
 
 The version numbers of this module match the version number of the [offical Electron releases](https://github.com/atom/electron/releases), which do not follow [semantic versioning](http://semver.org/).
 
-This module is automatically released whenever a new version of Electron is released thanks to [electron-bin-updater](https://github.com/johnmuhl/electron-bin-updater) written by [John Muhl](https://github.com/johnmuhl/).
+This module is automatically released whenever a new version of Electron is released thanks to [electron-bin-updater](https://github.com/johnmuhl/electron-prebuilt-updater) written by [John Muhl](https://github.com/johnmuhl/).
+
 
 ## Usage
 
@@ -65,7 +66,7 @@ electron your-app/
 
 ## Related modules
 
-- [electron-packager](https://github.com/RnbWd/electron-packager) - package and distribute your electron app in OS executables (.app, .exe etc)
+- [electron-packager](https://github.com/electron-userland/electron-packager) - package and distribute your electron app in OS executables (.app, .exe etc)
 - [electron-builder](https://github.com/loopline-systems/electron-builder) - create installers for Windows and OS X. It's built to work together with electron-packager
 - [menubar](https://github.com/maxogden/menubar) - high level way to create menubar desktop applications with electron
 
